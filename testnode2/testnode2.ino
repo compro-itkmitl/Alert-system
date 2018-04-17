@@ -5,19 +5,25 @@ SoftwareSerial NodeSerial(D2, D3);
 
 String recieve;
 String transmiss;
-#define WIFI_SSID       "HUAWEI-4A35"
-#define WIFI_PASSWORD   "57582013"
-#define FIREBASE_HOST "alert-system-82af3.firebaseio.com"
-#define FIREBASE_KEY "O1pdx7xfZssKt1GfSDjeQzJA4YaiWNRjWzBgcN8I"
+
+/*Definiting the WIFI and Firebase Info*/
+#define WIFI_SSID ".:: Home 249 WIFI::."
+#define WIFI_PASSWORD "d7rn14cg"
+#define FIREBASE_HOST "remotealertsystem.firebaseio.com"
+#define FIREBASE_KEY "sLj7Pi3JtBMHJJyI9EMQlIsl2RnVzcvVGGkGJHNF"
 
 int count=0;
 
 void setup() {
-pinMode(D2, INPUT);
-pinMode(D3, OUTPUT);
-Serial.begin(115200);
-NodeSerial.begin(4800);
-Serial.println(WiFi.localIP());
+  /*Init pinMode*/
+  pinMode(D2, INPUT);
+  pinMode(D3, OUTPUT);
+  
+  Serial.begin(115200);
+  NodeSerial.begin(4800);
+  //Serial.println(WiFi.localIP());
+  
+  /*Connecting the WIFI*/
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   Serial.print("connecting");
   while (WiFi.status() != WL_CONNECTED) {
@@ -28,9 +34,9 @@ Serial.println(WiFi.localIP());
   Serial.print("connected: ");
   Serial.println(WiFi.localIP());
 
+  /*Connecting the Firebase*/
   Firebase.begin(FIREBASE_HOST, FIREBASE_KEY);
-
-Serial.println("okay");
+  Serial.println("okay");
 }
 void loop() {
 
@@ -39,7 +45,10 @@ void loop() {
     char c = NodeSerial.read();
     recieve += c;
   }
+  
   if (recieve.length() > 0) {
+
+    /*This is the part of sending the quantity of Gas (Smoke) to Firebase.*/  
     if(count==0){
       if(recieve=="Alert"){
         Serial.println("!!");
@@ -55,6 +64,8 @@ void loop() {
         count++;
       }
      }
+
+     /*This is the part of sending the quantity of PIR (Infrared Sensor) to Firebase.*/  
      else if(count==1){
       if(recieve=="Alert"){
         Serial.println("!!");
@@ -70,6 +81,8 @@ void loop() {
         count++;
       }
      }
+
+     /*This is the part of sending the quantity of Temperature to Firebase.*/  
      else if(count==2){
       if(recieve=="Alert"){
         Serial.println("!!");
@@ -84,7 +97,7 @@ void loop() {
         recieve="";
         count=0;
       }
-      }
+     }
   }
 
   while (Serial.available()){
