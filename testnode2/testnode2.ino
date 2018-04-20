@@ -3,16 +3,19 @@
 #include <SoftwareSerial.h>
 SoftwareSerial NodeSerial(D2, D3);
 
-String recieve;
-String transmiss;
+//String recieve;
+String Get_Data;
+//String transmiss;
+String Transmission;
 
 /*Definiting the WIFI and Firebase Info*/
 #define WIFI_SSID ".:: Home 249 WIFI::."
 #define WIFI_PASSWORD "d7rn14cg"
-#define FIREBASE_HOST "remotealertsystem.firebaseio.com"
-#define FIREBASE_KEY "sLj7Pi3JtBMHJJyI9EMQlIsl2RnVzcvVGGkGJHNF"
+#define FIREBASE_HOST "alert-system-82af3.firebaseio.com"
+#define FIREBASE_KEY "O1pdx7xfZssKt1GfSDjeQzJA4YaiWNRjWzBgcN8I"
 
-int count=0;
+//int count = 0;
+int Time = 0;
 
 void setup() {
   /*Init pinMode*/
@@ -25,90 +28,89 @@ void setup() {
   
   /*Connecting the WIFI*/
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
-  Serial.print("connecting");
+  Serial.print("Connecting");
   while (WiFi.status() != WL_CONNECTED) {
     Serial.print(".");
     delay(500);
   }
   Serial.println();
-  Serial.print("connected: ");
+  Serial.print("Connected: ");
   Serial.println(WiFi.localIP());
 
   /*Connecting the Firebase*/
   Firebase.begin(FIREBASE_HOST, FIREBASE_KEY);
-  Serial.println("okay");
+  Serial.println("Okay");
 }
-void loop() {
 
+void loop() {
   while (NodeSerial.available()){
     delay(3);
     char c = NodeSerial.read();
-    recieve += c;
+    Get_Data += c;
   }
   
-  if (recieve.length() > 0) {
+  if (Get_Data.length() > 0) {
 
     /*This is the part of sending the quantity of Gas (Smoke) to Firebase.*/  
-    if(count==0){
-      if(recieve=="Alert"){
-        Serial.println("!!");
-        Firebase.setString("Sensor/Gas", recieve);
-        recieve="";
-        count++;
+    if(Time == 0){
+      if(Get_Data == "Alert"){
+        Serial.println("Alert !! From Gas");
+        Firebase.setString("Sensor/status", "Gas");
+        Firebase.setString("Sensor/count", Get_Data); 
+        Get_Data = "";
+        Time++;
       } 
       else{
-        Serial.print(recieve);
-        Serial.println(" P");
-        Firebase.setString("Sensor/Gas", recieve);
-        recieve="";
-        count++;
+        Serial.println(Get_Data);
+        Firebase.setString("Sensor/status", "Gas");
+        Firebase.setString("Sensor/count", Get_Data); 
+        Get_Data = "";
+        Time++;
       }
      }
 
      /*This is the part of sending the quantity of PIR (Infrared Sensor) to Firebase.*/  
-     else if(count==1){
-      if(recieve=="Alert"){
-        Serial.println("!!");
-        Firebase.setString("Sensor/PIR", recieve);
-        recieve="";
-        count++;
+     else if(Time == 1){
+      if(Get_Data == "Alert"){
+        Serial.println("Alert !! From PIR");
+        Firebase.setString("Sensor/status", "PIR");
+        Firebase.setString("Sensor/count", Get_Data);      
+        Get_Data = "";
+        Time++;
       } 
       else{
-        Serial.print(recieve);
-        Serial.println(" PIR");
-        Firebase.setString("Sensor/PIR", recieve);
-        recieve="";
-        count++;
+        Serial.println(Get_Data);
+        Firebase.setString("Sensor/status", "PIR");
+        Firebase.setString("Sensor/count", Get_Data);
+        Get_Data = "";
+        Time++;
       }
      }
 
      /*This is the part of sending the quantity of Temperature to Firebase.*/  
-     else if(count==2){
-      if(recieve=="Alert"){
-        Serial.println("!!");
-        Firebase.setString("Sensor/Temperature", recieve);
-        recieve="";
-        count=0;
+     else if(Time == 2) {
+      if(Get_Data == "Alert"){
+        Serial.println("Alert !! From Temperature");
+        Firebase.setString("Sensor/status", "Temperature");
+        Firebase.setString("Sensor/count", Get_Data); 
+        Get_Data = "";
+        Time = 0;
       } 
       else{
-        Serial.print(recieve);
-        Serial.println(" C");
-        Firebase.setString("Sensor/Temperature", recieve);
-        recieve="";
-        count=0;
+        Serial.println(Get_Data);
+        Firebase.setString("Sensor/status", "Temperature");
+        Firebase.setString("Sensor/count", Get_Data); 
+        Get_Data = "";
+        Time = 0;
       }
      }
   }
 
-  while (Serial.available()){
-    delay(3);
-    char c = Serial.read();
-    transmiss += c;
+ 
+  if (Transmission.length() > 0) {
+    Serial.println(Transmission);
+    NodeSerial.print(Transmission);
+    Transmission = "";
   }
-  
-  if (transmiss.length() > 0) {
-    Serial.println(transmiss);
-    NodeSerial.print(transmiss);
-    transmiss = "";
-  }
+
 }
