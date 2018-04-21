@@ -7,40 +7,66 @@ import
     Button, Collapse, CardImg, Card, 
     CardBody, CardText,CardTitle, CardSubtitle, Table,
     Nav, Navbar, NavItem, NavLink, NavbarBrand, ListGroup,
-    ListGroupItem
+    ListGroupItem, Media
 } 
 from 'reactstrap'
 import * as firebase from 'firebase'
 export default class DashBoard extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {  users: '' };
+        this.state = {  
+            Sensor: []
+        };
     }
     componentDidMount() {
         const config = {
-            apiKey: "AIzaSyBIH4uOJOrlYI5KwEDzQlITD0JoRxHlqxs",
-            authDomain: "compro-1cb91.firebaseapp.com",
-            databaseURL: "https://compro-1cb91.firebaseio.com",
-            projectId: "compro-1cb91",
-            storageBucket: "compro-1cb91.appspot.com",
-            messagingSenderId: "401428640836"
+            apiKey: "AIzaSyCo-ZuUXKRdlWtRo0xrJ3gUVN0WbGDzZaY",
+            authDomain: "alert-system-82af3.firebaseapp.com",
+            databaseURL: "https://alert-system-82af3.firebaseio.com",
+            projectId: "alert-system-82af3",
+            storageBucket: "alert-system-82af3.appspot.com",
+            messagingSenderId: "840558224088"
         };
         firebase.initializeApp(config);
-        firebase.database().ref("users/").on("value", (snapshot) => {
-            const users = snapshot.val()
-            if(users != null) {
+        let firebaseFilter = firebase.database().ref().child('Sensor');
+        firebaseFilter.on("value", (snapshot) => {
+            const Sensor = snapshot.val()
+            if(Sensor != null) {
                 this.setState({
-                    users: users
+                    Sensor: Sensor
                 })
             }
+            console.log(Sensor[0].status);
+            if (Sensor[0].status === 'Alert') {
+                let Sound = document.getElementById("Sound");
+                Sound.autoplay = true;
+                Sound.load();
+            }
         })
+    }
+    renderSensor = () => {
+       return (
+            Object.keys(this.state.Sensor).map((key)=>(
+            <tr key={key}>
+                <td>
+                    {this.state.Sensor[key].type}
+                </td>
+                <td>
+                    {this.state.Sensor[key].value}
+                </td>
+                <td>
+                    {this.state.Sensor[key].status}
+                </td>
+            </tr>
+        ))
+       )
     }
     render() {
         let logOut = () => {
             firebase.auth().signOut().then(function() {
-                // Sign-out successful.
-                location.reload();
-                location.href = '/';
+                window.location = '/'
+            }, function(error) {
+                console.error('Sign Out Error', error);
             });
         }
       return (
@@ -54,6 +80,9 @@ export default class DashBoard extends React.Component {
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.4.1/antd.min.css"/>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
                 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/reactstrap/4.8.0/reactstrap.min.js"></script>
+                <script type="text/javascript" src="/static/js/p5/p5.min.js"></script>
+                <script type="text/javascript" src="/static/js/p5/addons/p5.dom.min.js"></script>
+                <script type="text/javascript" src="/static/js/p5/addons/p5.sound.min.js"></script>
             </Head>
             <div className="container-fluid" style={{backgroundColor:'#fff'}}>
                     <nav className="navbar navbar-default">
@@ -75,42 +104,59 @@ export default class DashBoard extends React.Component {
                         <img src="static/image/logo/alertsystem.jpg" class="profileImage"/>
                         <li style={{fontSize:15, fontWeight:'bold'}}><a>admin</a></li>
                     </div>
-                        <div className="mainDashBoard col-md-8" style={{marginTop:50,marginBottom:50}}>
+                        <div id="SoundAlert">
+                            <audio id="Sound" controls>
+                                <source src="static/sound/SOS-effect.mp3" type="audio/mpeg"/>
+                            </audio>
+                        </div>
+                        <div className="mainDashBoard col-md-9" style={{marginTop:50,marginBottom:50}}>
+                            <h4 style={{marginLeft: -17, textTransform: 'uppercase', fontSize: 22, marginBottom: 36, fontWeight: 'bold', marginTop:30}}>
+                            my board status info</h4>
                             <div className="row">
-                            <img src="static/image/arduino-uno.png" height="90" style={{marginLeft:30,marginRight:50, marginBottom:30,float:'left'}}/>
-                            <h4 className="page-header" style={{marginTop:34,textTransform:'uppercase',fontWeight:'bold', fontFamily: 'sukhumvit set, sans-serif'}}>
-                                my arudino info
-                            </h4>
-                            <Table>
+                                <Media style={{marginRight:50,marginBottom:30}}>
+                                    <Media left href="#">
+                                        <Media object src={`static/image/icon/temp.jpg`} style={{height: 70, marginRight: 24,borderRadius:4}} />
+                                    </Media>
+                                    <Media body>
+                                        <Media style={{fontSize: 18, textTransform: 'capitalize', marginTop:19}}>
+                                        Temp
+                                        </Media>
+                                    </Media>
+                                </Media>
+                                <Media style={{marginRight:50,marginBottom:30}}>
+                                    <Media left href="#">
+                                        <Media object src={`static/image/icon/gas.jpg`} style={{height: 70, marginRight: 24,borderRadius:4}} />
+                                    </Media>
+                                    <Media body>
+                                        <Media style={{fontSize: 18, textTransform: 'capitalize', marginTop:19}}>
+                                        GAS
+                                        </Media>
+                                    </Media>
+                                </Media>
+                                <Media style={{marginRight:50,marginBottom:30}}>
+                                    <Media left href="#">
+                                        <Media object src={`static/image/icon/PIR.jpg`} style={{height: 70, marginRight: 24,borderRadius:4}} />
+                                    </Media>
+                                    <Media body>
+                                        <Media style={{fontSize: 18, textTransform: 'capitalize',marginTop:19}}>
+                                        PIR
+                                        </Media>
+                                    </Media>
+                                </Media>
+                                <br/>
+                                <br/>
+                                <Table>
                                 <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Username</th>
-                                </tr>
+                                    <tr>
+                                        <th>Sensor</th>
+                                        <th>Value</th>
+                                        <th>Status</th>
+                                    </tr>
                                 </thead>
-                                <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                                </tbody>
-                            </Table>
+                                    <tbody>
+                                        {this.renderSensor()}
+                                    </tbody>
+                                </Table>
                             </div>
                         </div>
                 </div>
@@ -156,7 +202,7 @@ export default class DashBoard extends React.Component {
                     background-color: #fff;
                     margin-top: 50px;
                     margin-left: 30px;
-                    margin-right: 80px;
+                    margin-right: 50px;
                     box-shadow: 0px 0px 6px #ced4da;
                     border-radius: 10px;
                 }
@@ -171,6 +217,17 @@ export default class DashBoard extends React.Component {
                 a, a:hover {
                     text-decoration: none !important;
                     color: #000;
+                }
+                .table thead th {
+                    font-size:16px;
+                    border-bottom:0 !important;
+                }
+
+                #SoundAlert {
+                    display:none;
+                }
+                #Sound {
+                    display:none;
                 }
             `}</style>
         </div>
