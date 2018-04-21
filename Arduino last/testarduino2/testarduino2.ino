@@ -6,13 +6,20 @@ SoftwareSerial ArduinoSerial(3, 2); // RX, TX
 
 RTC_DS3231 RTC;
 
-String recieve;
-int check_smoke=0,check_pir,check_tem;
-int check_smoke2=0,check_pir2=0,check_tem2;
-String transmisssmoke;
-String transmisspir;
-String transmisstem;
-int count=0;
+//String recieve;
+String Get_Data;
+//int check_smoke = 0, check_pir , check_tem;
+//int check_smoke2 = 0, check_pir2 = 0, check_tem2;
+int First_Check_Smoke = 0, First_Check_PIR = 0 , First_Check_Temperature = 0;
+int Second_Check_Smoke = 0, Second_Check_PIR = 0, Second_Check_Temperature = 0;
+//String transmisssmoke;
+//String transmisspir;
+//String transmisstem;
+String Transmission_of_Smoke;
+String Transmission_of_PIR;
+String Transmission_of_Temp;
+//int count = 0;
+int Time = 0;
 
 void setup() {
   Serial.begin(115200);
@@ -21,73 +28,73 @@ void setup() {
   RTC.begin();
   
   /*Init pinMode*/
-  pinMode(A0, INPUT);//smoke
-  pinMode(A1, INPUT);//pir
+  pinMode(A0, INPUT); //Smoke
+  pinMode(A1, INPUT); //PIR
 }
 void loop() {
-  count++;
+  Time++;
   /*This is the part of checking the quantity of Smoke.*/
-  if(count==60){
-      check_smoke=analogRead(A0);
+  if(Time == 60){
+      First_Check_Smoke = analogRead(A0);
     }
-  else if(count<60){
-    check_smoke2=analogRead(A0);
-    check_smoke=analogRead(A0);
-    }
-  else{
-    check_smoke2=analogRead(A0);
-    }
-  if(check_smoke2>check_smoke*110/100){ //Case Alert
-    transmisssmoke="Alert";
+  else if(Time < 60){
+    Second_Check_Smoke = analogRead(A0);
+    First_Check_Smoke = analogRead(A0);
     }
   else{
-    transmisssmoke=analogRead(A0);
+    Second_Check_Smoke = analogRead(A0);
+    }
+  if(Second_Check_Smoke > First_Check_Smoke*110/100){ //Case Alert
+    Transmission_of_Smoke = "Alert";
+    }
+  else{
+    Transmission_of_Smoke = analogRead(A0);
     }
 
   /*This is the part of checking the quantity of PIR (Infrared Sensor).*/  
-  if(count==60){
-    check_pir=analogRead(A1);
+  if(Time == 60){
+    First_Check_PIR = analogRead(A1);
     }
-  else if(count<60){
-    check_pir=analogRead(A1);
-    check_pir2=analogRead(A1);
+  else if(Time < 60){
+    First_Check_PIR = analogRead(A1);
+    Second_Check_PIR = analogRead(A1);
     }
   else{
-    check_pir2=analogRead(A1);
+    Second_Check_PIR = analogRead(A1);
     }
-  if(check_pir2>check_pir+20){ //Case Alert
-    transmisspir="Alert";
+  if(Second_Check_PIR > First_Check_PIR + 20){ //Case Alert
+    Transmission_of_PIR = "Alert";
     } 
   else{
-    transmisspir=analogRead(A1);
+    Transmission_of_PIR = analogRead(A1);
     }
 
   /*This is the part of checking the quantity of Temperature.*/
-  if(count%10==0){
-    if(RTC.getTemperature()>check_tem*110/100){ //Case Alert
-      transmisstem="Alert";
+  if(Time % 10 == 0){
+    if(RTC.getTemperature() > First_Check_Temperature*110/100){ //Case Alert
+      Transmission_of_Temp = "Alert";
       }
     }
-  else if(count%10==1){
-    check_tem = RTC.getTemperature();
+  else if(Time % 10 == 1){
+    First_Check_Temperature = RTC.getTemperature();
     }
   else{
-    transmisstem=RTC.getTemperature();
+    Transmission_of_Temp = RTC.getTemperature();
     }
     
   /*This is the part of showing the quantity of all in Serial Monitor.*/
   Serial.print("Smoke : ");
-  Serial.println(transmisssmoke); //Smoke
+  Serial.println(Transmission_of_Smoke); //Smoke
   Serial.print("PIR : ");
-  Serial.println(transmisspir); //PIR
+  Serial.println(Transmission_of_PIR); //PIR
   Serial.print("Temperature : ");
-  Serial.println(transmisstem); //Temperature
+  Serial.println(Transmission_of_Temp); //Temperature
   
   /*This is the part of printing the quantity of all in Arduino.*/
-  ArduinoSerial.print(transmisssmoke);
-  delay(500);
-  ArduinoSerial.print(transmisspir);
-  delay(500);
-  ArduinoSerial.print(transmisstem);
-  delay(500);
+  ArduinoSerial.print(Transmission_of_Smoke);
+  delay(1000);
+  ArduinoSerial.print(Transmission_of_PIR);
+  delay(1000);
+  ArduinoSerial.print(Transmission_of_Temp);
+  delay(1000);
 }  
