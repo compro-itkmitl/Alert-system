@@ -13,6 +13,5 @@ DS3231 Temperature sensor
 [![MQ2_Gas_Sensor_Module.jpg](https://s14.postimg.cc/vem4wy175/MQ2_Gas_Sensor_Module.jpg)](https://postimg.cc/image/l4jpxpbbh/)
 MQ2 Gas sensor
 
-	โหลดโปรแกรม Arduino จากลิ้ง 
-https://www.arduino.cc/en/Main/Software 
+	โหลดโปรแกรม Arduino จากลิ้ง https://www.arduino.cc/en/Main/Software 
 	จากนั้นลงlibaryในโฟลเดอร์libaryและโหลดโค้ด2อันลงไป
