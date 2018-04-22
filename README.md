@@ -57,11 +57,11 @@ https://www.arduino.cc/en/Main/Software
 	
 # Author
 
-|<a href="https://www.facebook.com/panjamapon"><img src="/images/Panjamapon.jpg" width="100px"></a>  |<a href="https://www.facebook.com/paoyimpae"><img src="/images/Panupong.jpg" width="100px"></a>  |<a href="https://www.facebook.com/poom.net"><img src="/images/Poom.jpg" width="100px"></a>|
-|:-:|:-:|:-:|
-|[@happyudong555](https://github.com/happyudong555)|[@paoyimpae](https://github.com/paoyimpae)|[@xzsawq47](https://github.com/xzsawq47)|
-|ปัญจมพล กรรณสูต|ภานุพงศ์ เกตุรัตนกุล|ภูมิ เนตราคม|
-|60070050|60070072|60070074| 
+|รูปภาพ|<a href="https://www.facebook.com/panjamapon"><img src="/images/Panjamapon.jpg" width="100px"></a>  |<a href="https://www.facebook.com/paoyimpae"><img src="/images/Panupong.jpg" width="100px"></a>  |<a href="https://www.facebook.com/poom.net"><img src="/images/Poom.jpg" width="100px"></a>|
+|:-:|:-:|:-:|:-:|
+|GitHub User|[@happyudong555](https://github.com/happyudong555)|[@paoyimpae](https://github.com/paoyimpae)|[@xzsawq47](https://github.com/xzsawq47)|
+|ชื่อ|ปัญจมพล กรรณสูต|ภานุพงศ์ เกตุรัตนกุล|ภูมิ เนตราคม|
+|รหัสนักศึกษา|60070050|60070072|60070074| 
 
 # Assistant Teacher
 
