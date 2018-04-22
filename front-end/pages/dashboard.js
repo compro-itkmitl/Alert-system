@@ -36,30 +36,15 @@ export default class DashBoard extends React.Component {
                     Sensor: Sensor
                 })
             }
-            console.log(Sensor[0].status);
-            if (Sensor[0].status === 'Alert') {
-                let Sound = document.getElementById("Sound");
-                Sound.autoplay = true;
-                Sound.load();
+            for (let i = 0;i < Sensor.length;i++) {
+                if (Sensor[i].status === 'Alert' || Sensor[i].status === 'alert') {
+                    let Sound = document.getElementById("Sound");
+                    Sound.autoplay = true;
+                    Sound.load();
+                }
+                console.log(Sensor[i]);
             }
         })
-    }
-    renderSensor = () => {
-       return (
-            Object.keys(this.state.Sensor).map((key)=>(
-            <tr key={key}>
-                <td>
-                    {this.state.Sensor[key].type}
-                </td>
-                <td>
-                    {this.state.Sensor[key].value}
-                </td>
-                <td>
-                    {this.state.Sensor[key].status}
-                </td>
-            </tr>
-        ))
-       )
     }
     render() {
         let logOut = () => {
@@ -154,7 +139,21 @@ export default class DashBoard extends React.Component {
                                     </tr>
                                 </thead>
                                     <tbody>
-                                        {this.renderSensor()}
+                                        {
+                                            Object.keys(this.state.Sensor).map((key)=>(
+                                                <tr key={key}>
+                                                    <td>
+                                                        {this.state.Sensor[key].type}
+                                                    </td>
+                                                    <td>
+                                                        {this.state.Sensor[key].value}
+                                                    </td>
+                                                    <td>
+                                                        {this.state.Sensor[key].status}
+                                                    </td>
+                                                </tr>
+                                            ))
+                                        }
                                     </tbody>
                                 </Table>
                             </div>
