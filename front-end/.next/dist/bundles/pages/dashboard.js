@@ -67,7 +67,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -159,7 +159,7 @@ var DashBoard = function (_React$Component) {
 
             var logOut = function logOut() {
                 __WEBPACK_IMPORTED_MODULE_5_firebase__["auth"]().signOut().then(function () {
-                    window.location = '/';
+                    location.href = '/';
                 }, function (error) {
                     console.error('Sign Out Error', error);
                 });
@@ -658,7 +658,7 @@ var DashBoard = function (_React$Component) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/dashboard.js");

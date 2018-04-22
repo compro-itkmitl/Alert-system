@@ -2,7 +2,7 @@ module.exports =
 
         __NEXT_REGISTER_PAGE('/dashboard', function() {
           var comp = 
-      webpackJsonp([3],{
+      webpackJsonp([4],{
 
 /***/ "./node_modules/@firebase/app/dist/esm/index.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -31529,12 +31529,12 @@ var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.do
 "use strict";
 /* unused harmony export Alert */
 /* unused harmony export Container */
-/* unused harmony export Row */
-/* unused harmony export Col */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Row; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Col; });
 /* unused harmony export Navbar */
 /* unused harmony export NavbarBrand */
 /* unused harmony export NavbarToggler */
-/* unused harmony export Nav */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Nav; });
 /* unused harmony export NavItem */
 /* unused harmony export NavDropdown */
 /* unused harmony export NavLink */
@@ -31583,7 +31583,7 @@ var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.do
 /* unused harmony export PopperContent */
 /* unused harmony export PopperTargetHelper */
 /* unused harmony export Tooltip */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Table; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return Table; });
 /* unused harmony export ListGroup */
 /* unused harmony export Form */
 /* unused harmony export FormFeedback */
@@ -31596,12 +31596,12 @@ var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.do
 /* unused harmony export InputGroupButtonDropdown */
 /* unused harmony export InputGroupText */
 /* unused harmony export Label */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Media; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Media; });
 /* unused harmony export Pagination */
 /* unused harmony export PaginationItem */
 /* unused harmony export PaginationLink */
-/* unused harmony export TabContent */
-/* unused harmony export TabPane */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return TabContent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return TabPane; });
 /* unused harmony export Jumbotron */
 /* unused harmony export Collapse */
 /* unused harmony export ListGroupItem */
@@ -37840,7 +37840,7 @@ var DashBoard = function (_React$Component) {
 
             var logOut = function logOut() {
                 __WEBPACK_IMPORTED_MODULE_5_firebase__["auth"]().signOut().then(function () {
-                    window.location = '/';
+                    location.href = '/';
                 }, function (error) {
                     console.error('Sign Out Error', error);
                 });
@@ -38083,34 +38083,34 @@ var DashBoard = function (_React$Component) {
                                     }
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
+                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
                                     { style: { marginRight: 50, marginBottom: 30 }, __source: {
                                             fileName: _jsxFileName,
                                             lineNumber: 101
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
                                         { left: true, href: '#', __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 102
                                             }
                                         },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */], { object: true, src: 'static/image/icon/temp.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */], { object: true, src: 'static/image/icon/temp.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 103
                                             }
                                         })
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
                                         { body: true, __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 105
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
+                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
                                             { style: { fontSize: 18, textTransform: 'capitalize', marginTop: 19 }, __source: {
                                                     fileName: _jsxFileName,
                                                     lineNumber: 106
@@ -38121,34 +38121,34 @@ var DashBoard = function (_React$Component) {
                                     )
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
+                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
                                     { style: { marginRight: 50, marginBottom: 30 }, __source: {
                                             fileName: _jsxFileName,
                                             lineNumber: 111
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
                                         { left: true, href: '#', __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 112
                                             }
                                         },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */], { object: true, src: 'static/image/icon/gas.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */], { object: true, src: 'static/image/icon/gas.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 113
                                             }
                                         })
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
                                         { body: true, __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 115
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
+                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
                                             { style: { fontSize: 18, textTransform: 'capitalize', marginTop: 19 }, __source: {
                                                     fileName: _jsxFileName,
                                                     lineNumber: 116
@@ -38159,34 +38159,34 @@ var DashBoard = function (_React$Component) {
                                     )
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
+                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
                                     { style: { marginRight: 50, marginBottom: 30 }, __source: {
                                             fileName: _jsxFileName,
                                             lineNumber: 121
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
                                         { left: true, href: '#', __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 122
                                             }
                                         },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */], { object: true, src: 'static/image/icon/PIR.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */], { object: true, src: 'static/image/icon/PIR.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 123
                                             }
                                         })
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
                                         { body: true, __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 125
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
+                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
                                             { style: { fontSize: 18, textTransform: 'capitalize', marginTop: 19 }, __source: {
                                                     fileName: _jsxFileName,
                                                     lineNumber: 126
@@ -38209,7 +38209,7 @@ var DashBoard = function (_React$Component) {
                                     }
                                 }),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Table */],
+                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["g" /* Table */],
                                     {
                                         __source: {
                                             fileName: _jsxFileName,
@@ -38381,7 +38381,7 @@ var _default = DashBoard;
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/dashboard.js");
@@ -38389,7 +38389,7 @@ module.exports = __webpack_require__("./pages/dashboard.js");
 
 /***/ })
 
-},[2])
+},[3])
           return { page: comp.default }
         })
       ;

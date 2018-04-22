@@ -45,7 +45,7 @@ export default class Index extends React.Component {
                 notification.open(args);
             }
             else {
-                let firebaseRef = firebase.database().ref().child('users');
+                let firebaseRef = firebase.database().ref().child('users/');
                     firebaseRef.push({
                     email: email,
                     username: username,
@@ -77,7 +77,7 @@ export default class Index extends React.Component {
             document.getElementById('LogInform').reset();
             firebase.auth().signInWithEmailAndPassword(email, password).catch((users) => {
                 if (users) {
-                    window.location = '/dashboard'
+                    location.href = '/dashboard'
                 }
             });
         }

@@ -49,7 +49,7 @@ export default class DashBoard extends React.Component {
     render() {
         let logOut = () => {
             firebase.auth().signOut().then(function() {
-                window.location = '/'
+                location.href = '/'
             }, function(error) {
                 console.error('Sign Out Error', error);
             });
