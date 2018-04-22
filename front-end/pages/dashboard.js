@@ -10,6 +10,7 @@ import
     ListGroupItem, Media
 } 
 from 'reactstrap'
+import { notification, Icon, Alert } from 'antd'
 import * as firebase from 'firebase'
 export default class DashBoard extends React.Component {
     constructor(props) {
@@ -37,14 +38,24 @@ export default class DashBoard extends React.Component {
                 })
             }
             for (let i = 0;i < Sensor.status.length;i++) {
-                if (Sensor[i].status === 'Alert' || Sensor[i].status === 'alert') {
+                if (Sensor[i].status === 'Alert' || Sensor[i].status === 'alert' || Sensor[i].status === 'Error' || Sensor[i].status === 'error') {
                     let Sound = document.getElementById("Sound");
                     Sound.autoplay = true;
                     Sound.load();
+
+                    notificationAlert();
                 }
                 console.log(Sensor[i]);
             }
         })
+        let notificationAlert = () => {
+            const args = {
+                message: 'Warning !!!',
+                description:'Please becareful yours hardware maybe has error status or overheat!',
+                icon: <Icon type="warning" style={{color:'#e81908'}}/>
+            };
+            notification.open(args);
+        }
     }
     render() {
         let logOut = () => {
@@ -102,7 +113,7 @@ export default class DashBoard extends React.Component {
                                     </Media>
                                     <Media body>
                                         <Media style={{fontSize: 18, textTransform: 'capitalize', marginTop:19}}>
-                                        Temp
+                                        Temperature
                                         </Media>
                                     </Media>
                                 </Media>
@@ -218,6 +229,9 @@ export default class DashBoard extends React.Component {
                 .table thead th {
                     font-size:16px;
                     border-bottom:0 !important;
+                }
+                .table td, .table th {
+                    border-top:0 !important;
                 }
 
                 #SoundAlert {
