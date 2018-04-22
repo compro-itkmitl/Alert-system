@@ -17,11 +17,6 @@
 5.) MQ2 Gas sensor
 [![MQ2_Gas_Sensor_Module.jpg](https://s14.postimg.cc/ckdva5sxd/MQ2_Gas_Sensor_Module.jpg)](https://postimg.cc/image/l2nbehzfx/)<br>
 
-
-<<<<<<< HEAD
-	โหลดโปรแกรม Arduino จากลิ้ง https://www.arduino.cc/en/Main/Software 
-	จากนั้นลงlibaryในโฟลเดอร์libaryและโหลดโค้ด2อันลงไป
-
 # Install & Setup Website Alert-system
 1.) download หรือ clone project<br>
 2.) cd front-end และ ต่อด้วย yarn install , yarn buld
@@ -46,8 +41,9 @@ Stack เทคโนโลยีที่เราใช้ทั้งหม�
 
 https://www.arduino.cc/en/Main/Software 
 	
-	จากนั้นลง Library ในโฟลเดอร์ Library และโหลดโค้ด 2 อันจากโฟลเดอร์ testarduino2 และ testnode2 ลงไป<br>
+	จากนั้นลง Library ในโฟลเดอร์ Library และโหลดโค้ด 2 อันจากโฟลเดอร์ testarduino2 และ testnode2 ลงไป
 	และอัพโหลดขึ้น Arduino และ NodeMCU ที่ต่อกันอย่างนี้
+	
 [![31091887_2058467804479556_2269690877913858048_n.jpg](https://s14.postimg.cc/86ekpap9d/31091887_2058467804479556_2269690877913858048_n.jpg)](https://postimg.cc/image/5cbfbun31/)
 [![jjio.jpg](https://s14.postimg.cc/3kiggze0x/jjio.jpg)](https://postimg.cc/image/gbwmnhnst/)
 [![31206657_2058467817812888_7663271934481661952_n.jpg](https://s14.postimg.cc/qyqfswgip/31206657_2058467817812888_7663271934481661952_n.jpg)](https://postimg.cc/image/i3plidrq5/)
