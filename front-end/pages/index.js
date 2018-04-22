@@ -9,7 +9,7 @@ import
     ListGroupItem, Label, Row, Col, TabContent, TabPane
 }
 from 'reactstrap'
-import { notification, Icon } from 'antd'
+import { notification, Icon, Alert } from 'antd'
 import classnames from 'classnames'
 export default class Index extends React.Component {
     constructor(props) {
@@ -39,13 +39,13 @@ export default class Index extends React.Component {
             if (email.length && username.length && password.length < 6) {
                 const args = {
                     message: 'Create Account failed',
-                    description:'because your password is weak or less than 6 character ! , please try again.',
+                    description:'because your password is less than 6 character ! , please try again.',
                     icon: <Icon type="exclamation-circle" style={{color:'#e81908'}}/>
                   };
                 notification.open(args);
             }
             else {
-                let firebaseRef = firebase.database().ref().child('users');
+                let firebaseRef = firebase.database().ref().child('users/');
                     firebaseRef.push({
                     email: email,
                     username: username,
@@ -75,13 +75,9 @@ export default class Index extends React.Component {
             const email = document.getElementById('email').value
             const password = document.getElementById('password').value
             document.getElementById('LogInform').reset();
-            firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                if (errorCode === 'auth/wrong-password') {
-                    alert('Wrong password.');
-                } else {
-                    window.location = '/dashboard'
+            firebase.auth().signInWithEmailAndPassword(email, password).catch((users) => {
+                if (users) {
+                    location.href = '/dashboard'
                 }
             });
         }
@@ -114,7 +110,7 @@ export default class Index extends React.Component {
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.4.1/antd.min.css"/>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
                 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/reactstrap/4.8.0/reactstrap.min.js"></script>
-                <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+                <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
                 <script type="text/javascript" src="static/js/firebase.connect.js"></script>
                 </Head>
                 <div className="container clearfix" style={{marginTop:50,marginBottom:50}}>

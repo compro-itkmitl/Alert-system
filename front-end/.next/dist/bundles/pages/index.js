@@ -145,7 +145,7 @@ var Index = function (_React$Component) {
                 if (email.length && username.length && password.length < 6) {
                     var args = {
                         message: 'Create Account failed',
-                        description: 'because your password is weak or less than 6 character ! , please try again.',
+                        description: 'because your password is less than 6 character ! , please try again.',
                         icon: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_antd__["Icon"], { type: 'exclamation-circle', style: { color: '#e81908' }, __source: {
                                 fileName: _jsxFileName,
                                 lineNumber: 43
@@ -154,7 +154,7 @@ var Index = function (_React$Component) {
                     };
                     __WEBPACK_IMPORTED_MODULE_4_antd__["notification"].open(args);
                 } else {
-                    var firebaseRef = firebase.database().ref().child('users');
+                    var firebaseRef = firebase.database().ref().child('users/');
                     firebaseRef.push({
                         email: email,
                         username: username,
@@ -188,13 +188,9 @@ var Index = function (_React$Component) {
                 var email = document.getElementById('email').value;
                 var password = document.getElementById('password').value;
                 document.getElementById('LogInform').reset();
-                firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-                    if (errorCode === 'auth/wrong-password') {
-                        alert('Wrong password.');
-                    } else {
-                        window.location = '/dashboard';
+                firebase.auth().signInWithEmailAndPassword(email, password).catch(function (users) {
+                    if (users) {
+                        location.href = '/dashboard';
                     }
                 });
             };
@@ -207,7 +203,7 @@ var Index = function (_React$Component) {
                         message: 'Reset Password Succesful',
                         icon: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_antd__["Icon"], { type: 'check-circle', style: { color: '#10da10' }, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 95
+                                lineNumber: 91
                             }
                         })
                     };
@@ -218,7 +214,7 @@ var Index = function (_React$Component) {
                         message: 'Reset Password failed',
                         icon: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_antd__["Icon"], { type: 'exclamation-circle', style: { color: '#e81908' }, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 102
+                                lineNumber: 98
                             }
                         })
                     };
@@ -230,7 +226,7 @@ var Index = function (_React$Component) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 108
+                        lineNumber: 104
                     }
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -238,7 +234,7 @@ var Index = function (_React$Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 109
+                            lineNumber: 105
                         }
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -246,49 +242,49 @@ var Index = function (_React$Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 110
+                                lineNumber: 106
                             }
                         },
                         'ALERT SYSTEM'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { rel: 'stylesheet', href: 'static/css/bootstrap/dist/css/bootstrap.min.css', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 111
+                            lineNumber: 107
                         }
                     }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { type: 'text/javascript', src: 'static/js/jquery/dist/jquery.min.js', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 112
+                            lineNumber: 108
                         }
                     }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { type: 'text/javascript', src: 'https://cdnjs.cloudflare.com/ajax/libs/antd/3.4.1/antd.min.js', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 113
+                            lineNumber: 109
                         }
                     }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/antd/3.4.1/antd.min.css', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 114
+                            lineNumber: 110
                         }
                     }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 115
+                            lineNumber: 111
                         }
                     }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { type: 'text/javascript', src: 'https://cdnjs.cloudflare.com/ajax/libs/reactstrap/4.8.0/reactstrap.min.js', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 116
+                            lineNumber: 112
                         }
                     }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { type: 'text/javascript', src: 'https://www.gstatic.com/firebasejs/4.12.1/firebase.js', __source: {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { src: 'https://www.gstatic.com/firebasejs/4.13.0/firebase.js', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 117
+                            lineNumber: 113
                         }
                     }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { type: 'text/javascript', src: 'static/js/firebase.connect.js', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 118
+                            lineNumber: 114
                         }
                     })
                 ),
@@ -296,19 +292,19 @@ var Index = function (_React$Component) {
                     'div',
                     { className: 'container clearfix', style: { marginTop: 50, marginBottom: 50 }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 120
+                            lineNumber: 116
                         }
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         { className: 'row', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 121
+                                lineNumber: 117
                             }
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'static/image/logo/alertsystem.jpg', className: 'logo', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 122
+                                lineNumber: 118
                             }
                         })
                     ),
@@ -316,14 +312,14 @@ var Index = function (_React$Component) {
                         'div',
                         { className: 'mainTabs', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 124
+                                lineNumber: 120
                             }
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             __WEBPACK_IMPORTED_MODULE_3_reactstrap__["Nav"],
                             { tabs: true, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 125
+                                    lineNumber: 121
                                 }
                             },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -334,12 +330,12 @@ var Index = function (_React$Component) {
                                         _this2.toggle('1');
                                     }, style: { marginRight: 20, fontSize: 14 }, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 126
+                                        lineNumber: 122
                                     }
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_antd__["Icon"], { type: 'user', style: { marginLeft: 0, marginRight: 16, fontSize: 26 }, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 129
+                                        lineNumber: 125
                                     }
                                 }),
                                 'Create Account'
@@ -352,12 +348,12 @@ var Index = function (_React$Component) {
                                         _this2.toggle('2');
                                     }, style: { marginRight: 20, fontSize: 14 }, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 131
+                                        lineNumber: 127
                                     }
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_antd__["Icon"], { type: 'unlock', style: { marginLeft: 10, marginRight: 20, fontSize: 26 }, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 134
+                                        lineNumber: 130
                                     }
                                 }),
                                 'Login With Account'
@@ -370,12 +366,12 @@ var Index = function (_React$Component) {
                                         _this2.toggle('3');
                                     }, style: { fontSize: 14 }, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 136
+                                        lineNumber: 132
                                     }
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_antd__["Icon"], { type: 'key', style: { marginLeft: 10, marginRight: 20, fontSize: 26 }, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 139
+                                        lineNumber: 135
                                     }
                                 }),
                                 'Forgot Password'
@@ -386,14 +382,14 @@ var Index = function (_React$Component) {
                         __WEBPACK_IMPORTED_MODULE_3_reactstrap__["TabContent"],
                         { activeTab: this.state.activeTab, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 143
+                                lineNumber: 139
                             }
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             __WEBPACK_IMPORTED_MODULE_3_reactstrap__["TabPane"],
                             { tabId: '1', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 144
+                                    lineNumber: 140
                                 }
                             },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -401,24 +397,46 @@ var Index = function (_React$Component) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 145
+                                        lineNumber: 141
                                     }
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     __WEBPACK_IMPORTED_MODULE_3_reactstrap__["Col"],
                                     { sm: '12', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 146
+                                            lineNumber: 142
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'form',
                                         { className: 'mainform', id: 'SignUpform', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 147
+                                                lineNumber: 143
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'email', className: 'form-control inputEmail', placeholder: 'Email', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 144
+                                            }
+                                        }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 145
+                                            }
+                                        }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'username', className: 'form-control inputUsername', placeholder: 'Username', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 146
+                                            }
+                                        }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 147
+                                            }
+                                        }),
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'password', id: 'password', className: 'form-control inputPassword', placeholder: 'Password', __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 148
                                             }
@@ -429,33 +447,11 @@ var Index = function (_React$Component) {
                                                 lineNumber: 149
                                             }
                                         }),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'username', className: 'form-control inputUsername', placeholder: 'Username', __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 150
-                                            }
-                                        }),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
-                                            __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 151
-                                            }
-                                        }),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'password', id: 'password', className: 'form-control inputPassword', placeholder: 'Password', __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 152
-                                            }
-                                        }),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
-                                            __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 153
-                                            }
-                                        }),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             'button',
                                             { type: 'button', onClick: createAccount, className: 'createBTN', __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 154
+                                                    lineNumber: 150
                                                 }
                                             },
                                             'CREATE ACCOUNT'
@@ -463,14 +459,14 @@ var Index = function (_React$Component) {
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 155
+                                                lineNumber: 151
                                             }
                                         }),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             'h6',
                                             { className: 'text-center', style: { textTransform: 'capitalize', fontSize: 13, color: '#d9291b', fontWeight: 'bold' }, __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 156
+                                                    lineNumber: 152
                                                 }
                                             },
                                             '* username of password should be atleast 6 characters *'
@@ -478,7 +474,7 @@ var Index = function (_React$Component) {
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 157
+                                                lineNumber: 153
                                             }
                                         })
                                     )
@@ -489,7 +485,7 @@ var Index = function (_React$Component) {
                             __WEBPACK_IMPORTED_MODULE_3_reactstrap__["TabPane"],
                             { tabId: '2', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 162
+                                    lineNumber: 158
                                 }
                             },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -497,50 +493,50 @@ var Index = function (_React$Component) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 163
+                                        lineNumber: 159
                                     }
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     __WEBPACK_IMPORTED_MODULE_3_reactstrap__["Col"],
                                     { sm: '12', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 164
+                                            lineNumber: 160
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'form',
                                         { className: 'mainform', id: 'LogInform', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 165
+                                                lineNumber: 161
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'email', className: 'form-control inputEmail', placeholder: 'Email', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 166
+                                                lineNumber: 162
                                             }
                                         }),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 167
+                                                lineNumber: 163
                                             }
                                         }),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'password', id: 'password', className: 'form-control inputPassword', placeholder: 'Password', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 168
+                                                lineNumber: 164
                                             }
                                         }),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 169
+                                                lineNumber: 165
                                             }
                                         }),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             'button',
                                             { onClick: logIn, type: 'button', style: { backgroundColor: '#d9291b' }, className: 'logInbtn', __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 170
+                                                    lineNumber: 166
                                                 }
                                             },
                                             'LOGIN WITH ACCOUNT'
@@ -553,7 +549,7 @@ var Index = function (_React$Component) {
                             __WEBPACK_IMPORTED_MODULE_3_reactstrap__["TabPane"],
                             { tabId: '3', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 175
+                                    lineNumber: 171
                                 }
                             },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -561,39 +557,39 @@ var Index = function (_React$Component) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 176
+                                        lineNumber: 172
                                     }
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     __WEBPACK_IMPORTED_MODULE_3_reactstrap__["Col"],
                                     { sm: '12', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 177
+                                            lineNumber: 173
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'form',
                                         { className: 'mainform', id: 'resetPasswordform', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 178
+                                                lineNumber: 174
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'sendEmail', className: 'form-control inputResetPassword', placeholder: 'Send your Email for Reset Password', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 179
+                                                lineNumber: 175
                                             }
                                         }),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 180
+                                                lineNumber: 176
                                             }
                                         }),
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             'button',
                                             { onClick: resetPassword, type: 'button', className: 'resetbtn', __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 181
+                                                    lineNumber: 177
                                                 }
                                             },
                                             'RESET PASSWORD'
@@ -609,7 +605,7 @@ var Index = function (_React$Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 188
+                            lineNumber: 184
                         }
                     },
                     '\n                    .clearfix {\n                        clear:both;\n                    }\n                    .nav-tabs {\n                        border:0;\n                    }\n                    body {\n                        background-color:#eee;\n                    }\n                    .logo {\n                        margin:30px auto;\n                        display: block;\n                        width:300px;\n                        height:340px;\n                    }\n                    .mainTabs {\n                        width:50%;\n                        margin:auto;\n                        display:block;\n                        margin-bottom: 26px;\n                        cursor: pointer;\n                    }\n                    .mainform {\n                        margin:auto;\n                        display:block;\n                    }\n                    .inputEmail, .inputUsername , .inputPassword , .createBTN, .logInbtn, .inputResetPassword, .resetbtn{\n                        width:50%;\n                        margin:auto;\n                        display:block;\n                    }\n                    .createBTN , .logInbtn, .resetbtn{\n                        height: 42px;\n                        color: #fff;\n                        background-color: #000;\n                        cursor: pointer;\n                        font-size: 13px;\n                        border-radius:4px;\n                        border:0;\n                    }\n                    .ant-notification-notice-with-icon .ant-notification-notice-message {\n                        position:relative;\n                        top:-4px;\n                        font-weight: bold;\n                    }\n                '
