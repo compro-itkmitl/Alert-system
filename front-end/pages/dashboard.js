@@ -36,12 +36,7 @@ export default class DashBoard extends React.Component {
                     Sensor: Sensor
                 })
             }
-            if (Sensor[0].status === 'Alert' || Sensor[1].status === 'alert') {
-                let Sound = document.getElementById("Sound");
-                Sound.autoplay = true;
-                Sound.load();
-            }
-            for (let i = 0;i < Sensor.length;i++) {
+            for (let i = 0;i < Sensor.status.length;i++) {
                 if (Sensor[i].status === 'Alert' || Sensor[i].status === 'alert') {
                     let Sound = document.getElementById("Sound");
                     Sound.autoplay = true;
