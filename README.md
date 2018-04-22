@@ -2,8 +2,10 @@
 	โปรเจคของเราทำอุปกรณ์ที่คอยเตือนว่าบ้านคุณเกิดปัญหาใดๆ หรือไม่ผ่านเว็บไซต์
 # How to use
 	อุปกรณ์ที่ต้องการมี 5 ตัว 
-1.) Arduino Uno
+	
+
 [![arduino-uno.jpg](https://s14.postimg.cc/jaucjhdhd/arduino-uno.jpg)](https://postimg.cc/image/5txe0m35p/)<br>
+1.) Arduino Uno<br>
 
 2.) NodeMCU
 [![Node_MCU.jpg](https://s14.postimg.cc/kd4j26975/Node_MCU.jpg)](https://postimg.cc/image/iy2ydg83x/)<br>
