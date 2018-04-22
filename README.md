@@ -53,9 +53,9 @@ https://www.arduino.cc/en/Main/Software
 	
 # Author
 
-|<a href="https://www.facebook.com/panjamapon"><img src="/images/Panjamapon.jpeg" width="100px"></a>  
-|<a href="https://www.facebook.com/paoyimpae"><img src="/images/Panupong.jpeg" width="100px"></a>  
-|<a href="https://www.facebook.com/poom.net"><img src="/images/Poom.jpeg" width="100px"></a>|
+|<a href="https://www.facebook.com/panjamapon"><img src="/images/Panjamapon.jpg" width="100px"></a>  
+|<a href="https://www.facebook.com/paoyimpae"><img src="/images/Panupong.jpg" width="100px"></a>  
+|<a href="https://www.facebook.com/poom.net"><img src="/images/Poom.jpg" width="100px"></a>|
 |:-:|:-:|:-:|
 |[@happyudong555](https://github.com/happyudong555)
 |[@paoyimpae](https://github.com/paoyimpae)
