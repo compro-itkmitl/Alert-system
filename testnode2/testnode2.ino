@@ -3,9 +3,9 @@
 #include <SoftwareSerial.h>
 SoftwareSerial NodeSerial(D2, D3);
 
-//String recieve;
+
 String Get_Data;
-//String transmiss;
+
 String Transmission;
 
 /*Definiting the WIFI and Firebase Info*/
@@ -14,7 +14,7 @@ String Transmission;
 #define FIREBASE_HOST "alert-system-82af3.firebaseio.com"
 #define FIREBASE_KEY "O1pdx7xfZssKt1GfSDjeQzJA4YaiWNRjWzBgcN8I"
 
-//int count = 0;
+
 int Time = 0;
 
 void setup() {
@@ -55,15 +55,15 @@ void loop() {
     if(Time == 0){
       if(Get_Data == "Alert"){
         Serial.println("Alert !! From Gas");
-        Firebase.setString("Sensor/status", "Gas");
-        Firebase.setString("Sensor/count", Get_Data); 
+        Firebase.setString("Sensor/0/status", "Alert");
+        Firebase.setString("Sensor/0/value", Get_Data); 
         Get_Data = "";
         Time++;
       } 
       else{
         Serial.println(Get_Data);
-        Firebase.setString("Sensor/status", "Gas");
-        Firebase.setString("Sensor/count", Get_Data); 
+        Firebase.setString("Sensor/0/status", "OK");
+        Firebase.setString("Sensor/0/value", Get_Data); 
         Get_Data = "";
         Time++;
       }
@@ -73,15 +73,15 @@ void loop() {
      else if(Time == 1){
       if(Get_Data == "Alert"){
         Serial.println("Alert !! From PIR");
-        Firebase.setString("Sensor/status", "PIR");
-        Firebase.setString("Sensor/count", Get_Data);      
+        Firebase.setString("Sensor/1/status", "Alert");
+        Firebase.setString("Sensor/1/value", Get_Data);      
         Get_Data = "";
         Time++;
       } 
       else{
         Serial.println(Get_Data);
-        Firebase.setString("Sensor/status", "PIR");
-        Firebase.setString("Sensor/count", Get_Data);
+        Firebase.setString("Sensor/1/status", "OK");
+        Firebase.setString("Sensor/1/value", Get_Data);
         Get_Data = "";
         Time++;
       }
@@ -91,15 +91,15 @@ void loop() {
      else if(Time == 2) {
       if(Get_Data == "Alert"){
         Serial.println("Alert !! From Temperature");
-        Firebase.setString("Sensor/status", "Temperature");
-        Firebase.setString("Sensor/count", Get_Data); 
+        Firebase.setString("Sensor/2/status", "Alert");
+        Firebase.setString("Sensor/2/value", Get_Data); 
         Get_Data = "";
         Time = 0;
       } 
       else{
         Serial.println(Get_Data);
-        Firebase.setString("Sensor/status", "Temperature");
-        Firebase.setString("Sensor/count", Get_Data); 
+        Firebase.setString("Sensor/2/status", "OK");
+        Firebase.setString("Sensor/2/value", Get_Data); 
         Get_Data = "";
         Time = 0;
       }

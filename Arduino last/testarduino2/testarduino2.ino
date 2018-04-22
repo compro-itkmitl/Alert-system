@@ -6,19 +6,16 @@ SoftwareSerial ArduinoSerial(3, 2); // RX, TX
 
 RTC_DS3231 RTC;
 
-//String recieve;
+
 String Get_Data;
-//int check_smoke = 0, check_pir , check_tem;
-//int check_smoke2 = 0, check_pir2 = 0, check_tem2;
+
 int First_Check_Smoke = 0, First_Check_PIR = 0 , First_Check_Temperature = 0;
 int Second_Check_Smoke = 0, Second_Check_PIR = 0, Second_Check_Temperature = 0;
-//String transmisssmoke;
-//String transmisspir;
-//String transmisstem;
+
 String Transmission_of_Smoke;
 String Transmission_of_PIR;
 String Transmission_of_Temp;
-//int count = 0;
+
 int Time = 0;
 
 void setup() {
