@@ -50,8 +50,28 @@ https://www.arduino.cc/en/Main/Software
 [![31100299_2058467787812891_4528253413959401472_n.jpg](https://s14.postimg.cc/6elluet1t/31100299_2058467787812891_4528253413959401472_n.jpg)](https://postimg.cc/image/hqy7c71ql/)
 
 	และเชื่อมต่อกับfirebaseจากนั้นก็หาที่ไว้เหมาะๆและต่อไฟได้เลย
+	
 # Author
-	 ภูมิ เนตราคม 60070074 
-	 ภานุพงศ์ เกตุรัตนกุล 60070072 
-	 ปัญจมพล กรรณสูต 60070050
+
+<a href="https://www.facebook.com/panjamapon"><img src="/images/Panjamapon.png" width="100px"></a>  
+|<a href="https://www.facebook.com/paoyimpae"><img src="/images/Panupong.png" width="100px"></a>  
+|<a href="https://www.facebook.com/poom.net"><img src="/images/Poom.png" width="100px"></a>|
+|:-:|:-:|:-:|
+|[@happyudong555](https://github.com/happyudong555)
+|[@paoyimpae](https://github.com/paoyimpae)
+|[@xzsawq47](https://github.com/xzsawq47)|
+|ปัญจมพล กรรณสูต|ภานุพงศ์ เกตุรัตนกุล|ภูมิ เนตราคม|
+|60070050|60070072|60070074| 
+
+# Assistant Teacher
+
+|ผศ. ดร. กิติ์สุชาติ พสุภา|ผศ. ดร. ปานวิทย์ ธุวะนุติ|
+|:-:|:-:|
+|![](/images/TeacherKitsuchart.png)|![](/images/TeacherPanwit.png)|
+
+รายงานนี้เป็นส่วนหนึ่งของวิชา Computer Programming (รหัส 06016315)
+คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
+
+---
+
 >>>>>>> df7047a26fbc4b34749c5fe25f1078e48fa7af7e
