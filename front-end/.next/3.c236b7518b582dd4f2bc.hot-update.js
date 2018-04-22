@@ -1,97 +1,30 @@
-module.exports =
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		var threw = true;
-/******/ 		try {
-/******/ 			modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 			threw = false;
-/******/ 		} finally {
-/******/ 			if(threw) delete installedModules[moduleId];
-/******/ 		}
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
-/******/ })
-/************************************************************************/
-/******/ ({
+webpackHotUpdate(3,{
 
 /***/ "./pages/dashboard.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head__ = __webpack_require__("next/head");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head__ = __webpack_require__("./node_modules/next/head.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_head__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link__ = __webpack_require__("next/link");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link__ = __webpack_require__("./node_modules/next/link.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_next_link__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_sweetalert__ = __webpack_require__("sweetalert");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_sweetalert__ = __webpack_require__("./node_modules/sweetalert/dist/sweetalert.min.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_sweetalert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_sweetalert__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_reactstrap__ = __webpack_require__("reactstrap");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_reactstrap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_reactstrap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase__ = __webpack_require__("firebase");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_reactstrap__ = __webpack_require__("./node_modules/reactstrap/dist/reactstrap.es.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase__ = __webpack_require__("./node_modules/firebase/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_firebase__);
 var _jsxFileName = '/Users/panjamaponkarnasuta/Desktop/Alert-system/front-end/pages/dashboard.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+(function () {
+    var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
+
+    enterModule && enterModule(module);
+})();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -394,34 +327,34 @@ var DashBoard = function (_React$Component) {
                                     }
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                     { style: { marginRight: 50, marginBottom: 30 }, __source: {
                                             fileName: _jsxFileName,
                                             lineNumber: 99
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                         { left: true, href: '#', __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 100
                                             }
                                         },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"], { object: true, src: 'static/image/icon/temp.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */], { object: true, src: 'static/image/icon/temp.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 101
                                             }
                                         })
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                         { body: true, __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 103
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                             { style: { fontSize: 18, textTransform: 'capitalize', marginTop: 19 }, __source: {
                                                     fileName: _jsxFileName,
                                                     lineNumber: 104
@@ -432,34 +365,34 @@ var DashBoard = function (_React$Component) {
                                     )
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                     { style: { marginRight: 50, marginBottom: 30 }, __source: {
                                             fileName: _jsxFileName,
                                             lineNumber: 109
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                         { left: true, href: '#', __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 110
                                             }
                                         },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"], { object: true, src: 'static/image/icon/gas.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */], { object: true, src: 'static/image/icon/gas.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 111
                                             }
                                         })
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                         { body: true, __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 113
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                             { style: { fontSize: 18, textTransform: 'capitalize', marginTop: 19 }, __source: {
                                                     fileName: _jsxFileName,
                                                     lineNumber: 114
@@ -470,34 +403,34 @@ var DashBoard = function (_React$Component) {
                                     )
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                     { style: { marginRight: 50, marginBottom: 30 }, __source: {
                                             fileName: _jsxFileName,
                                             lineNumber: 119
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                         { left: true, href: '#', __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 120
                                             }
                                         },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"], { object: true, src: 'static/image/icon/PIR.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */], { object: true, src: 'static/image/icon/PIR.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 121
                                             }
                                         })
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                         { body: true, __source: {
                                                 fileName: _jsxFileName,
                                                 lineNumber: 123
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                             { style: { fontSize: 18, textTransform: 'capitalize', marginTop: 19 }, __source: {
                                                     fileName: _jsxFileName,
                                                     lineNumber: 124
@@ -520,7 +453,7 @@ var DashBoard = function (_React$Component) {
                                     }
                                 }),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Table"],
+                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Table */],
                                     {
                                         __source: {
                                             fileName: _jsxFileName,
@@ -641,64 +574,56 @@ var DashBoard = function (_React$Component) {
                 )
             );
         }
+    }, {
+        key: '__reactstandin__regenerateByEval',
+        value: function __reactstandin__regenerateByEval(key, code) {
+            this[key] = eval(code);
+        }
     }]);
 
     return DashBoard;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (DashBoard);
+var _default = DashBoard;
+/* harmony default export */ __webpack_exports__["default"] = (_default);
+;
 
-/***/ }),
+(function () {
+    var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/index.js").default;
 
-/***/ 2:
-/***/ (function(module, exports, __webpack_require__) {
+    var leaveModule = __webpack_require__("./node_modules/react-hot-loader/index.js").leaveModule;
 
-module.exports = __webpack_require__("./pages/dashboard.js");
+    if (!reactHotLoader) {
+        return;
+    }
 
+    reactHotLoader.register(DashBoard, 'DashBoard', '/Users/panjamaponkarnasuta/Desktop/Alert-system/front-end/pages/dashboard.js');
+    reactHotLoader.register(_default, 'default', '/Users/panjamaponkarnasuta/Desktop/Alert-system/front-end/pages/dashboard.js');
+    leaveModule(module);
+})();
 
-/***/ }),
+;
+    (function (Component, route) {
+      if(!Component) return
+      if (false) return
+      module.hot.accept()
+      Component.__route = route
 
-/***/ "firebase":
-/***/ (function(module, exports) {
+      if (module.hot.status() === 'idle') return
 
-module.exports = require("firebase");
+      var components = next.router.components
+      for (var r in components) {
+        if (!components.hasOwnProperty(r)) continue
 
-/***/ }),
-
-/***/ "next/head":
-/***/ (function(module, exports) {
-
-module.exports = require("next/head");
-
-/***/ }),
-
-/***/ "next/link":
-/***/ (function(module, exports) {
-
-module.exports = require("next/link");
-
-/***/ }),
-
-/***/ "react":
-/***/ (function(module, exports) {
-
-module.exports = require("react");
-
-/***/ }),
-
-/***/ "reactstrap":
-/***/ (function(module, exports) {
-
-module.exports = require("reactstrap");
-
-/***/ }),
-
-/***/ "sweetalert":
-/***/ (function(module, exports) {
-
-module.exports = require("sweetalert");
+        if (components[r].Component.__route === route) {
+          next.router.update(r, Component)
+        }
+      }
+    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/dashboard")
+  
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ })
 
-/******/ });
-//# sourceMappingURL=dashboard.js.map
+})
+//# sourceMappingURL=3.c236b7518b582dd4f2bc.hot-update.js.map

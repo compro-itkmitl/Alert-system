@@ -36,7 +36,7 @@ export default class DashBoard extends React.Component {
                     Sensor: Sensor
                 })
             }
-            for (let i = 0;i < Sensor.length;i++) {
+            for (let i = 0;i < Sensor.status.length;i++) {
                 if (Sensor[i].status === 'Alert' || Sensor[i].status === 'alert') {
                     let Sound = document.getElementById("Sound");
                     Sound.autoplay = true;
@@ -89,11 +89,9 @@ export default class DashBoard extends React.Component {
                         <img src="static/image/logo/alertsystem.jpg" class="profileImage"/>
                         <li style={{fontSize:15, fontWeight:'bold'}}><a>admin</a></li>
                     </div>
-                        <div id="SoundAlert">
-                            <audio id="Sound" controls>
-                                <source src="static/sound/SOS-effect.mp3" type="audio/mpeg"/>
-                            </audio>
-                        </div>
+                        <audio id="Sound" controls>
+                            <source src="static/sound/SOS-effect.mp3" type="audio/mpeg"/>
+                        </audio>
                         <div className="mainDashBoard col-md-9" style={{marginTop:50,marginBottom:50}}>
                             <h4 style={{marginLeft: -17, textTransform: 'uppercase', fontSize: 22, marginBottom: 36, fontWeight: 'bold', marginTop:30}}>
                             my board status info</h4>

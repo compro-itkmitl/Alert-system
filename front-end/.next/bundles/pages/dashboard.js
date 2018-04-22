@@ -2,7 +2,7 @@ module.exports =
 
         __NEXT_REGISTER_PAGE('/dashboard', function() {
           var comp = 
-      webpackJsonp([4],{
+      webpackJsonp([3],{
 
 /***/ "./node_modules/@firebase/app/dist/esm/index.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -31529,12 +31529,12 @@ var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.do
 "use strict";
 /* unused harmony export Alert */
 /* unused harmony export Container */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Row; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Col; });
+/* unused harmony export Row */
+/* unused harmony export Col */
 /* unused harmony export Navbar */
 /* unused harmony export NavbarBrand */
 /* unused harmony export NavbarToggler */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Nav; });
+/* unused harmony export Nav */
 /* unused harmony export NavItem */
 /* unused harmony export NavDropdown */
 /* unused harmony export NavLink */
@@ -31583,7 +31583,7 @@ var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.do
 /* unused harmony export PopperContent */
 /* unused harmony export PopperTargetHelper */
 /* unused harmony export Tooltip */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return Table; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Table; });
 /* unused harmony export ListGroup */
 /* unused harmony export Form */
 /* unused harmony export FormFeedback */
@@ -31596,12 +31596,12 @@ var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.do
 /* unused harmony export InputGroupButtonDropdown */
 /* unused harmony export InputGroupText */
 /* unused harmony export Label */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Media; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Media; });
 /* unused harmony export Pagination */
 /* unused harmony export PaginationItem */
 /* unused harmony export PaginationLink */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return TabContent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return TabPane; });
+/* unused harmony export TabContent */
+/* unused harmony export TabPane */
 /* unused harmony export Jumbotron */
 /* unused harmony export Collapse */
 /* unused harmony export ListGroupItem */
@@ -37823,7 +37823,7 @@ var DashBoard = function (_React$Component) {
                         Sensor: Sensor
                     });
                 }
-                for (var i = 0; i < Sensor.length; i++) {
+                for (var i = 0; i < Sensor.status.length; i++) {
                     if (Sensor[i].status === 'Alert' || Sensor[i].status === 'alert') {
                         var Sound = document.getElementById("Sound");
                         Sound.autoplay = true;
@@ -38039,38 +38039,30 @@ var DashBoard = function (_React$Component) {
                             )
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'div',
-                            { id: 'SoundAlert', __source: {
+                            'audio',
+                            { id: 'Sound', controls: true, __source: {
                                     fileName: _jsxFileName,
                                     lineNumber: 92
                                 }
                             },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'audio',
-                                { id: 'Sound', controls: true, __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 93
-                                    }
-                                },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('source', { src: 'static/sound/SOS-effect.mp3', type: 'audio/mpeg', __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 94
-                                    }
-                                })
-                            )
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('source', { src: 'static/sound/SOS-effect.mp3', type: 'audio/mpeg', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 93
+                                }
+                            })
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
                             { className: 'mainDashBoard col-md-9', style: { marginTop: 50, marginBottom: 50 }, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 97
+                                    lineNumber: 95
                                 }
                             },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'h4',
                                 { style: { marginLeft: -17, textTransform: 'uppercase', fontSize: 22, marginBottom: 36, fontWeight: 'bold', marginTop: 30 }, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 98
+                                        lineNumber: 96
                                     }
                                 },
                                 'my board status info'
@@ -38079,41 +38071,41 @@ var DashBoard = function (_React$Component) {
                                 'div',
                                 { className: 'row', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 100
+                                        lineNumber: 98
                                     }
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
+                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                     { style: { marginRight: 50, marginBottom: 30 }, __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 101
+                                            lineNumber: 99
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                         { left: true, href: '#', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 102
+                                                lineNumber: 100
                                             }
                                         },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */], { object: true, src: 'static/image/icon/temp.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */], { object: true, src: 'static/image/icon/temp.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 103
+                                                lineNumber: 101
                                             }
                                         })
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                         { body: true, __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 105
+                                                lineNumber: 103
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
+                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                             { style: { fontSize: 18, textTransform: 'capitalize', marginTop: 19 }, __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 106
+                                                    lineNumber: 104
                                                 }
                                             },
                                             'Temp'
@@ -38121,37 +38113,37 @@ var DashBoard = function (_React$Component) {
                                     )
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
+                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                     { style: { marginRight: 50, marginBottom: 30 }, __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 111
+                                            lineNumber: 109
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                         { left: true, href: '#', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 112
+                                                lineNumber: 110
                                             }
                                         },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */], { object: true, src: 'static/image/icon/gas.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */], { object: true, src: 'static/image/icon/gas.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 113
+                                                lineNumber: 111
                                             }
                                         })
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                         { body: true, __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 115
+                                                lineNumber: 113
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
+                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                             { style: { fontSize: 18, textTransform: 'capitalize', marginTop: 19 }, __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 116
+                                                    lineNumber: 114
                                                 }
                                             },
                                             'GAS'
@@ -38159,37 +38151,37 @@ var DashBoard = function (_React$Component) {
                                     )
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
+                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                     { style: { marginRight: 50, marginBottom: 30 }, __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 121
+                                            lineNumber: 119
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                         { left: true, href: '#', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 122
+                                                lineNumber: 120
                                             }
                                         },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */], { object: true, src: 'static/image/icon/PIR.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */], { object: true, src: 'static/image/icon/PIR.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 123
+                                                lineNumber: 121
                                             }
                                         })
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                         { body: true, __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 125
+                                                lineNumber: 123
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Media */],
+                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                             { style: { fontSize: 18, textTransform: 'capitalize', marginTop: 19 }, __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 126
+                                                    lineNumber: 124
                                                 }
                                             },
                                             'PIR'
@@ -38199,21 +38191,21 @@ var DashBoard = function (_React$Component) {
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 131
+                                        lineNumber: 129
                                     }
                                 }),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 132
+                                        lineNumber: 130
                                     }
                                 }),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["g" /* Table */],
+                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Table */],
                                     {
                                         __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 133
+                                            lineNumber: 131
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -38221,7 +38213,7 @@ var DashBoard = function (_React$Component) {
                                         {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 134
+                                                lineNumber: 132
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -38229,7 +38221,7 @@ var DashBoard = function (_React$Component) {
                                             {
                                                 __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 135
+                                                    lineNumber: 133
                                                 }
                                             },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -38237,7 +38229,7 @@ var DashBoard = function (_React$Component) {
                                                 {
                                                     __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 136
+                                                        lineNumber: 134
                                                     }
                                                 },
                                                 'Sensor'
@@ -38247,7 +38239,7 @@ var DashBoard = function (_React$Component) {
                                                 {
                                                     __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 137
+                                                        lineNumber: 135
                                                     }
                                                 },
                                                 'Value'
@@ -38257,7 +38249,7 @@ var DashBoard = function (_React$Component) {
                                                 {
                                                     __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 138
+                                                        lineNumber: 136
                                                     }
                                                 },
                                                 'Status'
@@ -38269,7 +38261,7 @@ var DashBoard = function (_React$Component) {
                                         {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 141
+                                                lineNumber: 139
                                             }
                                         },
                                         Object.keys(this.state.Sensor).map(function (key) {
@@ -38277,7 +38269,7 @@ var DashBoard = function (_React$Component) {
                                                 'tr',
                                                 { key: key, __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 144
+                                                        lineNumber: 142
                                                     }
                                                 },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -38285,7 +38277,7 @@ var DashBoard = function (_React$Component) {
                                                     {
                                                         __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 145
+                                                            lineNumber: 143
                                                         }
                                                     },
                                                     _this3.state.Sensor[key].type
@@ -38295,7 +38287,7 @@ var DashBoard = function (_React$Component) {
                                                     {
                                                         __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 148
+                                                            lineNumber: 146
                                                         }
                                                     },
                                                     _this3.state.Sensor[key].value
@@ -38305,7 +38297,7 @@ var DashBoard = function (_React$Component) {
                                                     {
                                                         __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 151
+                                                            lineNumber: 149
                                                         }
                                                     },
                                                     _this3.state.Sensor[key].status
@@ -38323,7 +38315,7 @@ var DashBoard = function (_React$Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 164
+                            lineNumber: 162
                         }
                     },
                     '\n                body {\n                    background-color:#f2f5f7;\n                }\n                .profileImage {\n                    width: 100px;\n                    height: 100px;\n                    margin: 50px auto;\n                    display: block;\n                    border-radius: 100%;\n                    background-color: transparent;\n                    overflow: hidden;\n                    object-fit: cover;\n                    object-position: center top;\n                }\n                .mainDashBoard {\n                    height: auto;\n                    background-color: #fff;\n                    padding: 60px;\n                    padding-top: 30px;\n                    padding-bottom: 30px;\n                    box-shadow: 0px 0px 6px #ced4da;\n                    border-radius: 10px;\n                    float: left;\n                }\n                .header-dashboard{\n                    margin-top: 50px;\n                    float: left;\n                    height: 160px;\n                    background-color: #fff;\n                    box-shadow: 0px 0px 6px #ced4da;\n                    border-radius: 10px;\n                    padding:15px;\n                }\n                .card-ui{\n                    float: left;\n                    height: 260px;\n                    background-color: #fff;\n                    margin-top: 50px;\n                    margin-left: 30px;\n                    margin-right: 50px;\n                    box-shadow: 0px 0px 6px #ced4da;\n                    border-radius: 10px;\n                }\n                li {\n                    list-style: none;\n                    text-align: center;\n                    text-transform: capitalize;\n                    line-height: 32px;\n                    position: relative;\n                    top: -20px;\n                }\n                a, a:hover {\n                    text-decoration: none !important;\n                    color: #000;\n                }\n                .table thead th {\n                    font-size:16px;\n                    border-bottom:0 !important;\n                }\n\n                #SoundAlert {\n                    display:none;\n                }\n                #Sound {\n                    display:none;\n                }\n            '
@@ -38381,7 +38373,7 @@ var _default = DashBoard;
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/dashboard.js");
@@ -38389,7 +38381,7 @@ module.exports = __webpack_require__("./pages/dashboard.js");
 
 /***/ })
 
-},[3])
+},[2])
           return { page: comp.default }
         })
       ;

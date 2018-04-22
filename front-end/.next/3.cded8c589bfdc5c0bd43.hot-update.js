@@ -1,97 +1,30 @@
-module.exports =
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		var threw = true;
-/******/ 		try {
-/******/ 			modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 			threw = false;
-/******/ 		} finally {
-/******/ 			if(threw) delete installedModules[moduleId];
-/******/ 		}
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
-/******/ })
-/************************************************************************/
-/******/ ({
+webpackHotUpdate(3,{
 
 /***/ "./pages/dashboard.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head__ = __webpack_require__("next/head");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head__ = __webpack_require__("./node_modules/next/head.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_head__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link__ = __webpack_require__("next/link");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link__ = __webpack_require__("./node_modules/next/link.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_next_link__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_sweetalert__ = __webpack_require__("sweetalert");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_sweetalert__ = __webpack_require__("./node_modules/sweetalert/dist/sweetalert.min.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_sweetalert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_sweetalert__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_reactstrap__ = __webpack_require__("reactstrap");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_reactstrap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_reactstrap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase__ = __webpack_require__("firebase");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_reactstrap__ = __webpack_require__("./node_modules/reactstrap/dist/reactstrap.es.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase__ = __webpack_require__("./node_modules/firebase/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_firebase__);
 var _jsxFileName = '/Users/panjamaponkarnasuta/Desktop/Alert-system/front-end/pages/dashboard.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+(function () {
+    var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
+
+    enterModule && enterModule(module);
+})();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -142,14 +75,20 @@ var DashBoard = function (_React$Component) {
                         Sensor: Sensor
                     });
                 }
-                for (var i = 0; i < Sensor.status.length; i++) {
+                if (Sensor[0].status === 'Alert' || Sensor[0].status === 'alert' || Sensor[1].status === 'Alert' || Sensor[1].status === 'alert' || Sensor[2].status === 'Alert' || Sensor[2].status === 'alert') {
+                    var Sound = document.getElementById("Sound");
+                    Sound.autoplay = true;
+                    Sound.load();
+                }
+                for (var i = 0; i <= Sensor.length; i++) {
                     if (Sensor[i].status === 'Alert' || Sensor[i].status === 'alert') {
-                        var Sound = document.getElementById("Sound");
-                        Sound.autoplay = true;
-                        Sound.load();
+                        var _Sound = document.getElementById("Sound");
+                        _Sound.autoplay = true;
+                        _Sound.load();
                     }
                     console.log(Sensor[i]);
                 }
+                console.log(Sensor[0]);
             });
         }
     }, {
@@ -169,7 +108,7 @@ var DashBoard = function (_React$Component) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 58
+                        lineNumber: 64
                     }
                 },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -177,7 +116,7 @@ var DashBoard = function (_React$Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 59
+                            lineNumber: 65
                         }
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -185,59 +124,59 @@ var DashBoard = function (_React$Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 60
+                                lineNumber: 66
                             }
                         },
                         'ALERT SYSTEM || DashBoard'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { type: 'text/javascript', src: 'https://www.gstatic.com/firebasejs/4.12.1/firebase.js', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 61
+                            lineNumber: 67
                         }
                     }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { rel: 'stylesheet', href: 'static/css/bootstrap/dist/css/bootstrap.min.css', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 62
+                            lineNumber: 68
                         }
                     }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { type: 'text/javascript', src: 'static/js/jquery/dist/jquery.min.js', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 63
+                            lineNumber: 69
                         }
                     }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { type: 'text/javascript', src: 'https://cdnjs.cloudflare.com/ajax/libs/antd/3.4.1/antd.min.js', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 64
+                            lineNumber: 70
                         }
                     }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/antd/3.4.1/antd.min.css', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 65
+                            lineNumber: 71
                         }
                     }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 66
+                            lineNumber: 72
                         }
                     }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { type: 'text/javascript', src: 'https://cdnjs.cloudflare.com/ajax/libs/reactstrap/4.8.0/reactstrap.min.js', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 67
+                            lineNumber: 73
                         }
                     }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { type: 'text/javascript', src: '/static/js/p5/p5.min.js', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 68
+                            lineNumber: 74
                         }
                     }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { type: 'text/javascript', src: '/static/js/p5/addons/p5.dom.min.js', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 69
+                            lineNumber: 75
                         }
                     }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { type: 'text/javascript', src: '/static/js/p5/addons/p5.sound.min.js', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 70
+                            lineNumber: 76
                         }
                     })
                 ),
@@ -245,40 +184,40 @@ var DashBoard = function (_React$Component) {
                     'div',
                     { className: 'container-fluid', style: { backgroundColor: '#fff' }, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 72
+                            lineNumber: 78
                         }
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'nav',
                         { className: 'navbar navbar-default', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 73
+                                lineNumber: 79
                             }
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
                             { className: 'container', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 74
+                                    lineNumber: 80
                                 }
                             },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
                                 { className: 'navbar-header', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 75
+                                        lineNumber: 81
                                     }
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'a',
                                     { className: 'navbar-brand', href: '/', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 76
+                                            lineNumber: 82
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { height: '60', alt: 'logo', src: '/static/image/logo/navbar_logo.png', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 77
+                                            lineNumber: 83
                                         }
                                     })
                                 )
@@ -287,7 +226,7 @@ var DashBoard = function (_React$Component) {
                                 'ul',
                                 { style: { position: 'relative', top: 28, float: 'left', fontWeight: 'bold', right: 66 }, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 80
+                                        lineNumber: 86
                                     }
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -295,14 +234,14 @@ var DashBoard = function (_React$Component) {
                                     {
                                         __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 81
+                                            lineNumber: 87
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'a',
                                         { onClick: logOut, __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 81
+                                                lineNumber: 87
                                             }
                                         },
                                         'log Out'
@@ -316,33 +255,33 @@ var DashBoard = function (_React$Component) {
                     'div',
                     { className: 'container', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 86
+                            lineNumber: 92
                         }
                     },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         { className: 'row', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 87
+                                lineNumber: 93
                             }
                         },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
                             { className: 'col-md-2 card-ui', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 88
+                                    lineNumber: 94
                                 }
                             },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: 'static/image/logo/alertsystem.jpg', 'class': 'profileImage', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 89
+                                    lineNumber: 95
                                 }
                             }),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'li',
                                 { style: { fontSize: 15, fontWeight: 'bold' }, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 90
+                                        lineNumber: 96
                                     }
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -350,7 +289,7 @@ var DashBoard = function (_React$Component) {
                                     {
                                         __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 90
+                                            lineNumber: 96
                                         }
                                     },
                                     'admin'
@@ -361,12 +300,12 @@ var DashBoard = function (_React$Component) {
                             'audio',
                             { id: 'Sound', controls: true, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 92
+                                    lineNumber: 98
                                 }
                             },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('source', { src: 'static/sound/SOS-effect.mp3', type: 'audio/mpeg', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 93
+                                    lineNumber: 99
                                 }
                             })
                         ),
@@ -374,14 +313,14 @@ var DashBoard = function (_React$Component) {
                             'div',
                             { className: 'mainDashBoard col-md-9', style: { marginTop: 50, marginBottom: 50 }, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 95
+                                    lineNumber: 101
                                 }
                             },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'h4',
                                 { style: { marginLeft: -17, textTransform: 'uppercase', fontSize: 22, marginBottom: 36, fontWeight: 'bold', marginTop: 30 }, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 96
+                                        lineNumber: 102
                                     }
                                 },
                                 'my board status info'
@@ -390,41 +329,41 @@ var DashBoard = function (_React$Component) {
                                 'div',
                                 { className: 'row', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 98
+                                        lineNumber: 104
                                     }
                                 },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                     { style: { marginRight: 50, marginBottom: 30 }, __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 99
+                                            lineNumber: 105
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                         { left: true, href: '#', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 100
+                                                lineNumber: 106
                                             }
                                         },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"], { object: true, src: 'static/image/icon/temp.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */], { object: true, src: 'static/image/icon/temp.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 101
+                                                lineNumber: 107
                                             }
                                         })
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                         { body: true, __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 103
+                                                lineNumber: 109
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                             { style: { fontSize: 18, textTransform: 'capitalize', marginTop: 19 }, __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 104
+                                                    lineNumber: 110
                                                 }
                                             },
                                             'Temp'
@@ -432,37 +371,37 @@ var DashBoard = function (_React$Component) {
                                     )
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                     { style: { marginRight: 50, marginBottom: 30 }, __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 109
+                                            lineNumber: 115
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                         { left: true, href: '#', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 110
+                                                lineNumber: 116
                                             }
                                         },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"], { object: true, src: 'static/image/icon/gas.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */], { object: true, src: 'static/image/icon/gas.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 111
+                                                lineNumber: 117
                                             }
                                         })
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                         { body: true, __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 113
+                                                lineNumber: 119
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                             { style: { fontSize: 18, textTransform: 'capitalize', marginTop: 19 }, __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 114
+                                                    lineNumber: 120
                                                 }
                                             },
                                             'GAS'
@@ -470,37 +409,37 @@ var DashBoard = function (_React$Component) {
                                     )
                                 ),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                     { style: { marginRight: 50, marginBottom: 30 }, __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 119
+                                            lineNumber: 125
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                         { left: true, href: '#', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 120
+                                                lineNumber: 126
                                             }
                                         },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"], { object: true, src: 'static/image/icon/PIR.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */], { object: true, src: 'static/image/icon/PIR.jpg', style: { height: 70, marginRight: 24, borderRadius: 4 }, __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 121
+                                                lineNumber: 127
                                             }
                                         })
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                        __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                         { body: true, __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 123
+                                                lineNumber: 129
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Media"],
+                                            __WEBPACK_IMPORTED_MODULE_4_reactstrap__["a" /* Media */],
                                             { style: { fontSize: 18, textTransform: 'capitalize', marginTop: 19 }, __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 124
+                                                    lineNumber: 130
                                                 }
                                             },
                                             'PIR'
@@ -510,21 +449,21 @@ var DashBoard = function (_React$Component) {
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 129
+                                        lineNumber: 135
                                     }
                                 }),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 130
+                                        lineNumber: 136
                                     }
                                 }),
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["Table"],
+                                    __WEBPACK_IMPORTED_MODULE_4_reactstrap__["b" /* Table */],
                                     {
                                         __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 131
+                                            lineNumber: 137
                                         }
                                     },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -532,7 +471,7 @@ var DashBoard = function (_React$Component) {
                                         {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 132
+                                                lineNumber: 138
                                             }
                                         },
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -540,7 +479,7 @@ var DashBoard = function (_React$Component) {
                                             {
                                                 __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 133
+                                                    lineNumber: 139
                                                 }
                                             },
                                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -548,7 +487,7 @@ var DashBoard = function (_React$Component) {
                                                 {
                                                     __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 134
+                                                        lineNumber: 140
                                                     }
                                                 },
                                                 'Sensor'
@@ -558,7 +497,7 @@ var DashBoard = function (_React$Component) {
                                                 {
                                                     __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 135
+                                                        lineNumber: 141
                                                     }
                                                 },
                                                 'Value'
@@ -568,7 +507,7 @@ var DashBoard = function (_React$Component) {
                                                 {
                                                     __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 136
+                                                        lineNumber: 142
                                                     }
                                                 },
                                                 'Status'
@@ -580,7 +519,7 @@ var DashBoard = function (_React$Component) {
                                         {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 139
+                                                lineNumber: 145
                                             }
                                         },
                                         Object.keys(this.state.Sensor).map(function (key) {
@@ -588,7 +527,7 @@ var DashBoard = function (_React$Component) {
                                                 'tr',
                                                 { key: key, __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 142
+                                                        lineNumber: 148
                                                     }
                                                 },
                                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -596,7 +535,7 @@ var DashBoard = function (_React$Component) {
                                                     {
                                                         __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 143
+                                                            lineNumber: 149
                                                         }
                                                     },
                                                     _this3.state.Sensor[key].type
@@ -606,7 +545,7 @@ var DashBoard = function (_React$Component) {
                                                     {
                                                         __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 146
+                                                            lineNumber: 152
                                                         }
                                                     },
                                                     _this3.state.Sensor[key].value
@@ -616,7 +555,7 @@ var DashBoard = function (_React$Component) {
                                                     {
                                                         __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 149
+                                                            lineNumber: 155
                                                         }
                                                     },
                                                     _this3.state.Sensor[key].status
@@ -634,71 +573,63 @@ var DashBoard = function (_React$Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 162
+                            lineNumber: 168
                         }
                     },
                     '\n                body {\n                    background-color:#f2f5f7;\n                }\n                .profileImage {\n                    width: 100px;\n                    height: 100px;\n                    margin: 50px auto;\n                    display: block;\n                    border-radius: 100%;\n                    background-color: transparent;\n                    overflow: hidden;\n                    object-fit: cover;\n                    object-position: center top;\n                }\n                .mainDashBoard {\n                    height: auto;\n                    background-color: #fff;\n                    padding: 60px;\n                    padding-top: 30px;\n                    padding-bottom: 30px;\n                    box-shadow: 0px 0px 6px #ced4da;\n                    border-radius: 10px;\n                    float: left;\n                }\n                .header-dashboard{\n                    margin-top: 50px;\n                    float: left;\n                    height: 160px;\n                    background-color: #fff;\n                    box-shadow: 0px 0px 6px #ced4da;\n                    border-radius: 10px;\n                    padding:15px;\n                }\n                .card-ui{\n                    float: left;\n                    height: 260px;\n                    background-color: #fff;\n                    margin-top: 50px;\n                    margin-left: 30px;\n                    margin-right: 50px;\n                    box-shadow: 0px 0px 6px #ced4da;\n                    border-radius: 10px;\n                }\n                li {\n                    list-style: none;\n                    text-align: center;\n                    text-transform: capitalize;\n                    line-height: 32px;\n                    position: relative;\n                    top: -20px;\n                }\n                a, a:hover {\n                    text-decoration: none !important;\n                    color: #000;\n                }\n                .table thead th {\n                    font-size:16px;\n                    border-bottom:0 !important;\n                }\n\n                #SoundAlert {\n                    display:none;\n                }\n                #Sound {\n                    display:none;\n                }\n            '
                 )
             );
         }
+    }, {
+        key: '__reactstandin__regenerateByEval',
+        value: function __reactstandin__regenerateByEval(key, code) {
+            this[key] = eval(code);
+        }
     }]);
 
     return DashBoard;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (DashBoard);
+var _default = DashBoard;
+/* harmony default export */ __webpack_exports__["default"] = (_default);
+;
 
-/***/ }),
+(function () {
+    var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/index.js").default;
 
-/***/ 2:
-/***/ (function(module, exports, __webpack_require__) {
+    var leaveModule = __webpack_require__("./node_modules/react-hot-loader/index.js").leaveModule;
 
-module.exports = __webpack_require__("./pages/dashboard.js");
+    if (!reactHotLoader) {
+        return;
+    }
 
+    reactHotLoader.register(DashBoard, 'DashBoard', '/Users/panjamaponkarnasuta/Desktop/Alert-system/front-end/pages/dashboard.js');
+    reactHotLoader.register(_default, 'default', '/Users/panjamaponkarnasuta/Desktop/Alert-system/front-end/pages/dashboard.js');
+    leaveModule(module);
+})();
 
-/***/ }),
+;
+    (function (Component, route) {
+      if(!Component) return
+      if (false) return
+      module.hot.accept()
+      Component.__route = route
 
-/***/ "firebase":
-/***/ (function(module, exports) {
+      if (module.hot.status() === 'idle') return
 
-module.exports = require("firebase");
+      var components = next.router.components
+      for (var r in components) {
+        if (!components.hasOwnProperty(r)) continue
 
-/***/ }),
-
-/***/ "next/head":
-/***/ (function(module, exports) {
-
-module.exports = require("next/head");
-
-/***/ }),
-
-/***/ "next/link":
-/***/ (function(module, exports) {
-
-module.exports = require("next/link");
-
-/***/ }),
-
-/***/ "react":
-/***/ (function(module, exports) {
-
-module.exports = require("react");
-
-/***/ }),
-
-/***/ "reactstrap":
-/***/ (function(module, exports) {
-
-module.exports = require("reactstrap");
-
-/***/ }),
-
-/***/ "sweetalert":
-/***/ (function(module, exports) {
-
-module.exports = require("sweetalert");
+        if (components[r].Component.__route === route) {
+          next.router.update(r, Component)
+        }
+      }
+    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/dashboard")
+  
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ })
 
-/******/ });
-//# sourceMappingURL=dashboard.js.map
+})
+//# sourceMappingURL=3.cded8c589bfdc5c0bd43.hot-update.js.map
