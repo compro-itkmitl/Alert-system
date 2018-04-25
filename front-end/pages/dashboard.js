@@ -42,10 +42,8 @@ export default class DashBoard extends React.Component {
                     let Sound = document.getElementById("Sound");
                     Sound.autoplay = true;
                     Sound.load();
-
                     notificationAlert();
                 }
-                console.log(Sensor[i]);
             }
         })
         let notificationAlert = () => {
